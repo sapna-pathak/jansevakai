@@ -1,4 +1,6 @@
 :root {
+  --primary-color: #0d6efd;
+  --dark-color: #212529;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -24,10 +26,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -65,4 +66,53 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Navigation Styles */
+header nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--primary-color);
+}
+
+header nav a:hover span {
+  width: 100%;
+}
+
+header nav a.active {
+  color: var(--primary-color);
+}
+
+header nav a.active span {
+  width: 100%;
+}
+
+/* Mobile Navigation Styles */
+header .d-md-none a {
+  transition: all 0.3s ease;
+}
+
+header .d-md-none a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+header .d-md-none a.active {
+  background-color: var(--primary-color);
+  color: white;
 }
